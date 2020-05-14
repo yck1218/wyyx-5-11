@@ -17,6 +17,7 @@ function furniture() {
    let goodsId = location.search.split("=")[1];   //   获取浏览器窗口问号后面的参数 也就是商品列表传入的参数
 
    $.get("./php/getGoodsInfo.php", { "goodsId": goodsId }, function (data) {
+
       $(".tea-content-l > div > img").attr("src", `${data.goodsImg}`);   //    获取到图片
 
       $(".tea-content-l > div > em").html(`2020新品${data.goodsType}系列>`);
@@ -89,10 +90,6 @@ function furniture() {
    });
 
 }
-
-
-
-
 
 $(function () {
    furniture();

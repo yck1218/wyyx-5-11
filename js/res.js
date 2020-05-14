@@ -7,7 +7,6 @@ jQuery.fn.extend({
             //  点击全选框 
         this.click(function(){
 
-
             $subCheck.prop("checked",this.checked);
         });
         // 点击 子复选框 

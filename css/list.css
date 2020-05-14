@@ -120,7 +120,7 @@ float: left;
         padding-top: 13px;
     }
     .content-c>div>div:nth-child(2) li span{
-        /* display: none; */
+        display: none;
     }
     .content-c>div>div:nth-child(2) li p{
         font-size: 14px;
