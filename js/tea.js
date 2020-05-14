@@ -20,6 +20,11 @@ function furniture() {
 
       $(".tea-content-l > div > img").attr("src", `${data.goodsImg}`);   //    获取到图片
 
+   function getBackgroundImg(){  //获取相应的背景图片
+      let w =$(".tea-content-l > div > img").attr("src");
+       $(".tea-content-l > div > div ").css({"background-image":`url(${w})`})
+   }
+    
       $(".tea-content-l > div > em").html(`2020新品${data.goodsType}系列>`);
       $(".prodict > p:nth-child(1) span").html(`
   <i>￥</i>
@@ -38,23 +43,30 @@ function furniture() {
 
       $(".tea-content-l > ul > li").eq(0).click(function () {
          $(".tea-content-l > div > img").attr("src", `${data.goodsImg}`);
+         getBackgroundImg();
       });
 
       $(".tea-content-l > ul > li").eq(1).click(function () {
          $(".tea-content-l > div > img").attr("src", `${data.beiyong1}`);
+         getBackgroundImg();
       });
 
       $(".tea-content-l > ul > li").eq(2).click(function () {
          $(".tea-content-l > div > img").attr("src", `${data.beiyong2}`);
+         getBackgroundImg();
       });
 
       $(".tea-content-l > ul > li").eq(3).click(function () {
          $(".tea-content-l > div > img").attr("src", `${data.beiyong3}`);
+         getBackgroundImg();
       });
 
       $(".tea-content-l > ul > li").eq(4).click(function () {
          $(".tea-content-l > div > img").attr("src", `${data.goodsImg}`);
+         getBackgroundImg();
       });
+      getBackgroundImg();
+
    }, "json");
 
    $(".tea-content-r>p:nth-of-type(5) span:nth-of-type(2) ").click(function () { //点击购物车发送ajax请求保存数据
@@ -88,10 +100,70 @@ function furniture() {
       num++;
       $(this).prev().val(num);
    });
+   let  minBox=null;
+   $(".tea-content-l >div").hover(function(){
 
+           $(this).children("div").css({"display":"block"})
+      minBox =document.createElement("span");  // 创建一个盒子代表查看区域
+
+      $(this).mousemove(function(event){
+         let e= event || window.event;
+      let left1=this.offsetLeft; //  获取盒子的偏移量 left
+      let top1=this.offsetTop;  // 获取盒子得偏移量 top
+
+      minBox.style.cssText=`
+         width: 200px;
+         height: 200px;
+         background: gold;
+         opacity: .2;
+         display: block;
+         position: absolute;
+         z-index:10
+      `;
+      this.appendChild(minBox);
+
+      
+      let width1=minBox.offsetWidth;  //获取元素的宽度
+      let height1=minBox.offsetHeight; // 获取元素的高度
+    
+      let lefT = e.pageX - left1 -width1/2;
+      let toP =  e.pageY - top1 - height1/2;     
+         if(lefT<0){
+            lefT=0;
+      }else if(lefT+width1>this.offsetWidth){
+            lefT = this.offsetWidth- width1;
+      }
+      
+      if(toP<0){
+            toP=0;
+      }else if(toP+height1>this.offsetWidth){
+            toP = this.offsetWidth- height1;
+      }
+
+      minBox.style.left = lefT+"px";
+      minBox.style.top = toP+"px";   
+      
+      $(".tea-content-l >div>div").css({"backgroundPosition":`-${lefT*2}px -${toP*2}px`})
+      
+      });
+      
+
+   },function(){
+      $(this).children("div").css({"display":"none"})
+      // this.removeChild(minBox);
+      this.removeChild($(this).children('span')[0]);
+
+
+   });
+
+   function magniffy(){  // 放大镜效果
+
+   }
+magniffy();
 }
 
 $(function () {
    furniture();
+ 
 
 });
