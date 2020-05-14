@@ -3,7 +3,7 @@
 header("Content-Type: text/html;charset=utf-8"); 
 $name=$_POST["name"]; 
 $password=$_POST["password"]; 
-$cons=mysqli_connect("localhost","root","","nz");
+$cons=mysqli_connect("localhost","root","root","goodsAndShoppingCart");
     $sql="INSERT INTO usname(name,password) VALUE ('{$name}','{$password}')";
 $result=mysqli_query($cons,$sql);
 mysqli_close($cons);

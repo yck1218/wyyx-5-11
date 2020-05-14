@@ -11,14 +11,10 @@ function getCookieKey(key){
       }
   }
   return null;
-   
 }
-
  let  userName =getCookieKey("userName");
- console.log(userName);
+
 $(".reg-c").children("span").html(`欢迎您：${userName}`);
-
-
 // banner 轮播图
 class Swiper{
     constructor(selector,obj){
@@ -46,14 +42,13 @@ class Swiper{
         this.autoplay();
         this.addevent();
     }
-    
+
     autoplay(){
      this.time = setInterval(()=>{
         this.goImg(this.ord+1);
     },this.timelong)
 
     }
-
     goImg(transOrd){
 
         if(transOrd==this.ord){

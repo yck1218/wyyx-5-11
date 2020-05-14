@@ -3,7 +3,7 @@
 header("Content-Type: text/html;charset=utf-8"); 
 $name=$_POST["name"]; 
 $password=$_POST["password"]; 
-$cons=mysqli_connect("localhost","root","","nz");
+$cons=mysqli_connect("localhost","root","root","goodsAndShoppingCart");
     // $sql="SELECT * FROM `usname`  WHERE name='{$name}'";
     $sql="SELECT * FROM  usname WHERE  `name`='{$name}' AND `password`='{$password}'";
 $result=mysqli_query($cons,$sql);

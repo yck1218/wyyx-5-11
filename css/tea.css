@@ -250,6 +250,7 @@
     width: 193px;
     background: #b4a078;
     color: #fff;
+    cursor:pointer;
     }
     .tea-content-r>p:nth-of-type(5) span:nth-of-type(3){
       width: 58px;

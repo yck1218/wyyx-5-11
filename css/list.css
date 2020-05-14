@@ -76,7 +76,8 @@ float: left;
         line-height: 45px;
     }
     .content-c{
-        height: 325px;
+        min-height: 162.5px;
+
         /* background: gold; */
         border: 1px solid #ccc;
         margin-bottom: 12px;
@@ -117,6 +118,9 @@ float: left;
         margin-right: 23px;
     }   .content-c>div>div:nth-child(2) li{
         padding-top: 13px;
+    }
+    .content-c>div>div:nth-child(2) li span{
+        /* display: none; */
     }
     .content-c>div>div:nth-child(2) li p{
         font-size: 14px;
