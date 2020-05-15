@@ -66,6 +66,16 @@ gulp.task("default",async ()=>{
         .pipe(gulp.dest("E://phpStudy//WWW//wyyx//js"))
     });
 
+
+
+    gulp.watch("./json/**/*" , async ()=>{    // 复制  php
+        gulp.src("./json/**/*")
+        .pipe(gulp.dest("E://phpStudy//WWW//wyyx/json"))
+        });
+    
+
+
+
 });
 gulp.task('server', function () {
     ser.server({

@@ -33,45 +33,49 @@ height: 690px;
     margin-bottom: 55px;
 }.denglu ul li{
 line-height: 24px;
+width: 222px;
+text-align: center;
 cursor:pointer;  
-}
-.denglu ul li:nth-child(1){
-    padding: 0 20px 0 16px;
-
 }
 .denglu ul li:nth-child(2){
     border-left: 1px solid #ccc;
     color: #ccc;
-  padding: 0 16px 0  30px;
+} 
+/* .denglu >article{
+    background: gold;
+} */
+.denglu >article:nth-of-type(2){
+    display: none;
 }
-.denglu>div{
+
+.denglu >article > div{
     height: 44px;
     width: 100%;
     border: 1px solid #ccc;
     display: flex;
     justify-content: flex-start;
 } 
-.denglu>div>span{
+.denglu  >article >div>span{
     display: block;
     width: 41px;
     height: 100%;
     text-align: center;
     line-height: 44px;
 }
-.denglu>div> em{
+.denglu  >article >div> em{
     display: block;
     flex: 1;
     height: 100%;
     padding: 6px 0;
 }
-.denglu>div> em input{
+.denglu >article >div> em input{
     border: none;
     border-left: 1px solid #ccc;
     height: 100%;
     width: 100%;
     padding-left: 10px;
 }
-.denglu>div:nth-of-type(1){
+.denglu  >article >div:nth-of-type(1){
     margin-bottom: 17px;
 }
 .denglu>span{
